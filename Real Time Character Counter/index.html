@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Real Time Character Counter</title>
+	</head>
+	<body class="w-screen h-screen flex justify-center items-center">
+		<div class="w-1/2 bg-blue-300 p-6 rounded-lg flex flex-col items-center">
+			<h1 class="text-2xl font-bold text-center">Real Time Character Counter</h1>
+			<textarea
+				class="mt-4 p-2 rounded-lg focus:outline-none"
+				id="textarea"
+				cols="50"
+				rows="1"
+				maxlength="50"
+				placeholder="Write Here"
+			></textarea>
+			<div class="w-4/5 mt-4 flex justify-between">
+				<div>Character Count : <span id="char-count">0</span></div>
+				<div>Remaining Characters : <span id="rem-char-count">50</span></div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
