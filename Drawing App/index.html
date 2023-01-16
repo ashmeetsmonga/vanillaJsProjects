@@ -8,8 +8,10 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>Drawing App</title>
 	</head>
-	<body class="w-screen h-screen bg-gray-50 flex flex-col justify-center items-center">
-		<canvas class="w-4/5 h-4/5 border-4 border-blue-900"></canvas>
+	<body
+		class="w-screen h-screen bg-gray-50 flex flex-col justify-center items-center overflow-hidden"
+	>
+		<canvas id="canvas" width="1000" height="650" class="border-4 border-blue-900"></canvas>
 		<div class="w-1/2 p-4 bg-blue-900 flex items-center gap-2">
 			<button class="bg-gray-100 text-xl dim rounded-md" id="decrease">-</button>
 			<button class="bg-gray-100 text-xl dim rounded-md cursor-default" id="size">20</button>
@@ -17,5 +19,6 @@
 			<input class="dim cursor-pointer rounded-md" type="color" id="color" />
 			<button class="bg-gray-100 text-xl dim rounded-md ml-auto" id="clear">X</button>
 		</div>
+		<script src="script.js"></script>
 	</body>
 </html>
