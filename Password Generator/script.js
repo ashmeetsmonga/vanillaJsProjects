@@ -14,12 +14,9 @@ function getRandomSymbol() {
 	return String.fromCharCode(Math.floor(Math.random() * 14) + 33);
 }
 
-console.log(
-	getRandomLowerCaseLetter() +
-		" " +
-		getRandomUpperCaseLetter() +
-		" " +
-		getRandomNumber() +
-		" " +
-		getRandomSymbol()
-);
+const randomFunc = {
+	lower: getRandomLowerCaseLetter,
+	upper: getRandomUpperCaseLetter,
+	number: getRandomNumber,
+	symbol: getRandomSymbol,
+};
