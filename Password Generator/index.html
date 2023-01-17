@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Password Generator</title>
+	</head>
+	<body class="w-screen h-screen bg-purple-700 flex justify-center items-center">
+		<div class="w-1/3 p-4 bg-purple-800 flex flex-col gap-2 items-center text-white rounded-md">
+			<h1 class="text-2xl font-bold">Password Generator</h1>
+			<div class="flex w-4/5">
+				<input class="w-full bg-purple-900 p-2 rounded-md" disabled value="Ashmeet Singh" />
+				<button class="-ml-12">Copy</button>
+			</div>
+			<div class="flex w-4/5 justify-between items-center">
+				<label>Password length</label>
+				<input
+					class="bg-purple-900 p-1 rounded-md focus:outline-none"
+					type="number"
+					id="length"
+					min="5"
+					max="20"
+					value="10"
+				/>
+			</div>
+			<div class="flex w-4/5 justify-between">
+				<label>Include uppercase</label>
+				<input type="checkbox" id="uppercase" checked />
+			</div>
+			<div class="flex w-4/5 justify-between">
+				<label>Include lowercase</label>
+				<input type="checkbox" id="lowercase" checked />
+			</div>
+			<div class="flex w-4/5 justify-between">
+				<label>Include numbers</label>
+				<input type="checkbox" id="numbers" checked />
+			</div>
+			<div class="flex w-4/5 justify-between">
+				<label>Include symbols</label>
+				<input type="checkbox" id="symbols" checked />
+			</div>
+			<button class="bg-purple-900 px-4 py-2 text-xl rounded-md">Generate Password</button>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
