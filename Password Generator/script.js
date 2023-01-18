@@ -5,6 +5,14 @@ const numberEl = document.getElementById("numbers");
 const symbolEl = document.getElementById("symbols");
 const generateBtnEl = document.getElementById("generate-btn");
 const generatedPasswordEl = document.getElementById("generated-password");
+const clipboardBtn = document.getElementById("clipboard");
+
+clipboardBtn.addEventListener("click", () => {
+	const password = generatedPasswordEl.value;
+	if (!password) return;
+
+	navigator.clipboard.writeText(password);
+});
 
 generateBtnEl.addEventListener("click", () => {
 	const length = lengthEl.value;
