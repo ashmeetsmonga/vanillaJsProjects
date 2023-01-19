@@ -1,0 +1,14 @@
+.bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/background.jpg');
+    object-fit: cover;
+}
+
+.wh {
+    width: 90px;
+    height: 100px;
+    transition: all .1s;
+}
+
+.animate {
+    transform: scale(1.1);
+}
