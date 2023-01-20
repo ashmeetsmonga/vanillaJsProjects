@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body {
+    width: 100vw;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+.header>h1 {
+    padding: 2rem 0;
+}
+
+.page {
+    height: 100vh;
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-indicator {
+    height: .5rem;
+    width: 0%;
+    position: fixed;
+    background-color: rgb(142, 0, 0);
+}
