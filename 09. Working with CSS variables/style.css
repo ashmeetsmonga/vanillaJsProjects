@@ -1,0 +1,44 @@
+:root {
+    --blur: 0px;
+    --color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.controls {
+    margin: 2rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.controls>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.box {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    border: 1rem solid var(--color);
+    filter: blur(var(--blur));
+}
