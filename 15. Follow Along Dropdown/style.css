@@ -67,6 +67,10 @@ nav ul {
     display: none;
 }
 
+.dropdown.open {
+    opacity: 1;
+}
+
 .trigger-enter .dropdown {
     display: block;
 }
