@@ -1,0 +1,45 @@
+let countDownInterval;
+const timerDisplay = document.querySelector(".display__time-left");
+const timerButtons = document.querySelectorAll(".timer__button");
+const customTimeForm = document.querySelector("#custom");
+
+function timer(seconds) {
+	const now = Date.now();
+	const then = now + seconds * 1000;
+	displayTimeLeft(seconds);
+	countDownInterval = setInterval(() => {
+		secondsLeft = Math.round((then - Date.now()) / 1000);
+		if (secondsLeft < 0) {
+			clearInterval(countDownInterval);
+			return;
+		}
+		displayTimeLeft(secondsLeft);
+	}, 1000);
+}
+
+function displayTimeLeft(seconds) {
+	const minutes = Math.floor(seconds / 60);
+	const remainderSeconds = seconds % 60;
+	const displayTime = `${minutes < 10 ? `0${minutes}` : minutes}:${
+		remainderSeconds < 10 ? `0${remainderSeconds}` : remainderSeconds
+	}`;
+	document.title(displayTime);
+	timerDisplay.textContent = displayTime;
+}
+
+function addTime(e) {
+	if (countDownInterval) clearInterval(countDownInterval);
+	const secondsToAdd = this.dataset.time;
+	timer(secondsToAdd);
+}
+
+timerButtons.forEach((timerButton) => timerButton.addEventListener("click", addTime));
+
+customTimeForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+	const { minutes } = Object.fromEntries(new FormData(e.target));
+	console.log(minutes);
+	const secondsToAdd = minutes * 60;
+	if (countDownInterval) clearInterval(countDownInterval);
+	timer(secondsToAdd);
+});
