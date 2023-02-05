@@ -52,5 +52,5 @@ function displayEndTime(milliseconds) {
 	const zone = hours >= 12 ? "PM" : "AM";
 	if (hours !== 12) hours = hours % 12;
 	const minutes = end.getMinutes();
-	endTimeDisplay.textContent = `Be back at ${hours}:${minutes} ${zone}`;
+	endTimeDisplay.textContent = `Be back at ${hours}:${minutes < 10 ? "0" : ""}${minutes} ${zone}`;
 }
