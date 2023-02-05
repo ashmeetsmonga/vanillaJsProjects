@@ -1,5 +1,6 @@
 let countDownInterval;
 const timerDisplay = document.querySelector(".display__time-left");
+const endTimeDisplay = document.querySelector(".display__end-time");
 const timerButtons = document.querySelectorAll(".timer__button");
 const customTimeForm = document.querySelector("#custom");
 
@@ -7,6 +8,7 @@ function timer(seconds) {
 	const now = Date.now();
 	const then = now + seconds * 1000;
 	displayTimeLeft(seconds);
+	displayEndTime(then);
 	countDownInterval = setInterval(() => {
 		secondsLeft = Math.round((then - Date.now()) / 1000);
 		if (secondsLeft < 0) {
@@ -23,7 +25,7 @@ function displayTimeLeft(seconds) {
 	const displayTime = `${minutes < 10 ? `0${minutes}` : minutes}:${
 		remainderSeconds < 10 ? `0${remainderSeconds}` : remainderSeconds
 	}`;
-	document.title(displayTime);
+	document.title = displayTime;
 	timerDisplay.textContent = displayTime;
 }
 
@@ -43,3 +45,12 @@ customTimeForm.addEventListener("submit", (e) => {
 	if (countDownInterval) clearInterval(countDownInterval);
 	timer(secondsToAdd);
 });
+
+function displayEndTime(milliseconds) {
+	const end = new Date(milliseconds);
+	let hours = end.getHours();
+	const zone = hours >= 12 ? "PM" : "AM";
+	if (hours !== 12) hours = hours % 12;
+	const minutes = end.getMinutes();
+	endTimeDisplay.textContent = `Be back at ${hours}:${minutes} ${zone}`;
+}
