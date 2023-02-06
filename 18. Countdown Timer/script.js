@@ -41,7 +41,6 @@ customTimeForm.addEventListener("submit", function (e) {
 	e.preventDefault();
 	// const { minutes } = Object.fromEntries(new FormData(e.target));
 	const minutes = this.minutes.value;
-	console.log(minutes);
 	const secondsToAdd = minutes * 60;
 	if (countDownInterval) clearInterval(countDownInterval);
 	timer(secondsToAdd);
