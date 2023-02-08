@@ -19,10 +19,15 @@
 				<option value="">Select A Voice</option>
 			</select>
 
-			<label for="rate">Time between two sentences</label>
+			<label for="rate">Speed</label>
 			<input name="rate" type="range" min="0" max="3" value="1" />
 
-			<textarea name="text">Hello, my name is Ashmeet.</textarea>
+			<label for="sentenceTime">Time between two sentences</label>
+			<input name="sentenceTime" type="range" min="0" max="3" value="1" />
+
+			<textarea name="text">
+Hello. My name is Ashmeet. This is a very big sentence which apparently has no end, but it will have to end sometime. Bye</textarea
+			>
 			<button id="stop">Stop!</button>
 			<button id="speak">Speak</button>
 		</div>

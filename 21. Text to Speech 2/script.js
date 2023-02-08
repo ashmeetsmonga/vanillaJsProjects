@@ -25,12 +25,21 @@ function setVoice() {
 
 async function startSpeech() {
 	speechSynthesis.cancel();
+	const textArray = document.querySelector('[name="text"]').value.split(".");
+	let i = 0;
+	msg.text = textArray[i];
 	speechSynthesis.speak(msg);
-}
-
-function speakText() {
-	msg.text = text;
-	speechSynthesis.speak(msg);
+	let startTime = 0;
+	msg.onstart = () => (startTime = Date.now());
+	msg.onend = async () => {
+		if (i === textArray.length - 1) return;
+		i += 1;
+		msg.text = textArray[i];
+		let delay = Date.now() - startTime;
+		const sentenceTime = Number(document.querySelector('[name="sentenceTime"]').value);
+		await new Promise((resolve, reject) => setTimeout(() => resolve(1), delay * sentenceTime));
+		speechSynthesis.speak(msg);
+	};
 }
 
 function setOptions() {
