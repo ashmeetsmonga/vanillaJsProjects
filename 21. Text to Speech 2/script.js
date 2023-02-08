@@ -28,6 +28,11 @@ async function startSpeech() {
 	speechSynthesis.speak(msg);
 }
 
+function speakText() {
+	msg.text = text;
+	speechSynthesis.speak(msg);
+}
+
 function setOptions() {
 	msg[this.name] = this.value;
 }
